@@ -33,6 +33,19 @@ class ViewController: UIViewController {
             }
             
             print(results)
+            
+            if let firstResult = results.first,
+                firstResult.identifier.contains("hotdog") {
+                self.navigationItem.title = "Hotdog!"
+            } else {
+                self.navigationItem.title = "Not Hotdog!"
+            }
+            
+//            if let firstResult = results.first {
+//                self.navigationItem.titleView?.sizeToFit()
+//                self.navigationItem.title = "\(firstResult.identifier) with \(firstResult.confidence * 100)% Acc"
+//            }
+            
         }
         
         let handler = VNImageRequestHandler(ciImage: image)
